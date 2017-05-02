@@ -6,10 +6,9 @@ using System.Threading.Tasks;
 
 namespace DSA_CA2
 {
-    class Program
+    class Menu
     {
-        static void Main(string[] args)
-        {
-        }
+
+        
     }
 }
