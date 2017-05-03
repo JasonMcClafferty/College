@@ -6,42 +6,32 @@ namespace DSA_CA2
 
    class AdjacencyList
     {
-
         List<int>[] verteces;
         Dictionary<int, int> parent;
         Dictionary<int, int> level;
-
         public AdjacencyList (List<int>[] v)
         {
             this.verteces = v;
         }
-
-
         public void printAL(List<int> list)
         {
-
             Console.Write("\nPrinting List \nSize: ");
             Console.WriteLine(list.Count);
-
-
             Console.Write("Nodes: ");
 
             foreach (int i in list)
             {
                 Console.Write(i + ", ");
             }
-
             Console.Write("\n");
         }
-
         public void shortestPath(int fromNode, int toNode)
         {
             int i = toNode;
             string shortestPath = "";
 
             Dictionary<int, int> parent = BFS(fromNode);
-
-
+        
             if (parent.ContainsKey(i))
             {
                 while (i != -1)
@@ -51,12 +41,9 @@ namespace DSA_CA2
                 }
                 Console.Write(shortestPath);
             }
-
         }
-
         public Dictionary<int, int> BFS(int s)
         {
-
             // level is a dictionary of verteces that have been assigned a level.
             // S is the start node, so is assigned level 0.
             Dictionary<int, int> level = new Dictionary<int, int>();
@@ -91,41 +78,28 @@ namespace DSA_CA2
                             next.Add(v);
                         }
                     }
-
                 frontier = next;
                 i++;
-                printAL(frontier);
+                // printAL(frontier);
             }
-
             return parent;
-               
         }
-    }
-    class TestGraph
-    {
-        public static void Main() {
+        public int getLength()
+        {
+            return verteces.Length;
+        }
+        public Dictionary<int, int> getParents()
+        {
+            return parent;
+        }
+        public Dictionary<int, int> getLevels()
+        {
+            return level;
+        }
 
-            List<int>[] v = new List<int>[10];
-
-            for (int i = 0; i < 10; i++)
-            {
-                v[i] = new List<int>();
-            }
-
-            v[0] = new List<int>() {7, 1};
-            v[1] = new List<int>() {0, 6};
-            v[2] = new List<int>() {3, 4, 5, 6};
-            v[3] = new List<int>() {2, 4, 6};
-            v[4] = new List<int>() {2, 3, 5};
-            v[5] = new List<int>() {2, 4};
-            v[6] = new List<int>() {1, 2, 3};
-            v[7] = new List<int>() {0};
-
-            AdjacencyList adj = new AdjacencyList(v);
-
-
-            
-            adj.shortestPath(2, 5);
+        public List<int> getNeighbours(int i)
+        {
+            return verteces[i];
         }
     }
 }

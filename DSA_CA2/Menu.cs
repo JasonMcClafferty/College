@@ -8,7 +8,47 @@ namespace DSA_CA2
 {
     class Menu
     {
+        public static void printList(AdjacencyList adj)
+        {
+            for (int i = 0; i < adj.getLength(); i++)
+            {
+                if (adj.getNeighbours(i).Count == 0)
+                {
+                    continue;
+                }
 
-        
+                String neighbours = "";
+                foreach (int j in adj.getNeighbours(i))
+                {
+                    neighbours += j + " ";
+                }
+                Console.WriteLine("Node " + (i + 1) + ":\n" + neighbours + "\n\n");
+            }
+        }
+
+        public static void Main(string[] Args)
+        {
+            List<int>[] v = new List<int>[10];
+
+            for (int i = 0; i < 10; i++)
+            {
+                v[i] = new List<int>();
+            }
+
+            v[0] = new List<int>() { 7, 1 };
+            v[1] = new List<int>() { 0, 6 };
+            v[2] = new List<int>() { 3, 4, 5, 6 };
+            v[3] = new List<int>() { 2, 4, 6 };
+            v[4] = new List<int>() { 2, 3, 5 };
+            v[5] = new List<int>() { 2, 4 };
+            v[6] = new List<int>() { 1, 2, 3 };
+            v[7] = new List<int>() { 0 };
+
+            AdjacencyList adj = new AdjacencyList(v);
+
+            Menu.printList(adj);
+
+            adj.shortestPath(2, 5);
+        }
     }
 }
