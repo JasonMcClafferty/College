@@ -8,8 +8,8 @@ namespace DSA_CA2
 {
     class Menu
     {
-
-        private static string instructions = "Please Enter:\n[1] Shortest Path\n[0] Exit";
+        private static string instructions = "Please Enter:\n[1] Enter Graph Data\n[2] Shortest Path\n[3] Print List\n[0] Exit";
+        private AdjacencyList adjList;
 
         public static void printList(AdjacencyList adj)
         {
@@ -38,9 +38,31 @@ namespace DSA_CA2
                 Console.WriteLine(instructions);
                 choice = Int32.Parse(Console.ReadLine());
 
-
-
+                switch (choice)
+                {
+                    case 0:
+                        Console.WriteLine("Goodbye!");
+                        break;
+                    case 1:
+                        Console.WriteLine("createAdjList();");
+                        break;
+                    case 2:
+                        Console.WriteLine("shortestPath();");
+                        break;
+                    case 3:
+                        Console.WriteLine("PrintList();");
+                        break;
+                    default:
+                        Console.WriteLine("Please enter a valid choice");
+                        break;
+                }
             }
+        }
+
+
+        public static void launchShortestPath()
+        {
+    
 
         }
 
@@ -66,7 +88,9 @@ namespace DSA_CA2
 
             Menu.printList(adj);
 
-            adj.shortestPath(2, 5);
+            Menu.menuLoop();
+
+            
         }
     }
 }
