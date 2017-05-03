@@ -25,13 +25,21 @@ namespace DSA_CA2
             }
             Console.Write("\n");
         }
+<<<<<<< HEAD
         public int shortestPath(int fromNode, int toNode)
+=======
+        public void shortestPath(int fromNode, int toNode)
+>>>>>>> 950226baada412decde77bd5e71d8d986835f47a
         {
             int i = toNode;
             string shortestPath = "";
 
             Dictionary<int, int> parent = BFS(fromNode);
+<<<<<<< HEAD
 
+=======
+        
+>>>>>>> 950226baada412decde77bd5e71d8d986835f47a
             if (parent.ContainsKey(i))
             {
                 while (i != -1)
@@ -41,9 +49,12 @@ namespace DSA_CA2
                 }
                 Console.Write(shortestPath);
             }
+<<<<<<< HEAD
             else return -1;
 
             return 0;
+=======
+>>>>>>> 950226baada412decde77bd5e71d8d986835f47a
         }
         public Dictionary<int, int> BFS(int s)
         {

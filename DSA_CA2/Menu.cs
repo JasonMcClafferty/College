@@ -11,6 +11,7 @@ namespace DSA_CA2
         private static string instructions = "Please Enter:\n[1] Enter Graph Data\n[2] Shortest Path\n[3] Print List\n[0] Exit";
         private AdjacencyList adjList;
 
+<<<<<<< HEAD
         public Menu(AdjacencyList aList)
         {
             this.adjList = aList;
@@ -21,11 +22,19 @@ namespace DSA_CA2
             for (int i = 0; i < adjList.getLength(); i++)
             {
                 if (adjList.getNeighbours(i).Count == 0)
+=======
+        public static void printList(AdjacencyList adj)
+        {
+            for (int i = 0; i < adj.getLength(); i++)
+            {
+                if (adj.getNeighbours(i).Count == 0)
+>>>>>>> 950226baada412decde77bd5e71d8d986835f47a
                 {
                     continue;
                 }
 
                 String neighbours = "";
+<<<<<<< HEAD
                 foreach (int j in adjList.getNeighbours(i))
                 {
                     neighbours += j + " ";
@@ -35,6 +44,17 @@ namespace DSA_CA2
         }
 
         public void menuLoop()
+=======
+                foreach (int j in adj.getNeighbours(i))
+                {
+                    neighbours += j + " ";
+                }
+                Console.WriteLine("Node " + (i + 1) + ":\n" + neighbours + "\n\n");
+            }
+        }
+
+        public static void menuLoop()
+>>>>>>> 950226baada412decde77bd5e71d8d986835f47a
         {
             int choice = -1;
 
@@ -49,6 +69,7 @@ namespace DSA_CA2
                         Console.WriteLine("Goodbye!");
                         break;
                     case 1:
+<<<<<<< HEAD
                         Console.WriteLine("createAdjacencyList();");
                         break;
                     case 2:
@@ -56,6 +77,15 @@ namespace DSA_CA2
                         break;
                     case 3:
                         this.printList();
+=======
+                        Console.WriteLine("createAdjList();");
+                        break;
+                    case 2:
+                        Console.WriteLine("shortestPath();");
+                        break;
+                    case 3:
+                        Console.WriteLine("PrintList();");
+>>>>>>> 950226baada412decde77bd5e71d8d986835f47a
                         break;
                     default:
                         Console.WriteLine("Please enter a valid choice");
@@ -64,6 +94,7 @@ namespace DSA_CA2
             }
         }
 
+<<<<<<< HEAD
         // Reads nodes, checks error code and handles user request for shortest path
         public void launchShortestPath()
         {
@@ -84,6 +115,13 @@ namespace DSA_CA2
                 }
 
             } while (check == -1);
+=======
+
+        public static void launchShortestPath()
+        {
+    
+
+>>>>>>> 950226baada412decde77bd5e71d8d986835f47a
         }
 
         public static void Main(string[] Args)
@@ -106,10 +144,18 @@ namespace DSA_CA2
 
             AdjacencyList adj = new AdjacencyList(v);
 
+<<<<<<< HEAD
             Menu menu = new Menu(adj);
             menu.menuLoop();
             menu.printList();
 
+=======
+            Menu.printList(adj);
+
+            Menu.menuLoop();
+
+            
+>>>>>>> 950226baada412decde77bd5e71d8d986835f47a
         }
     }
 }
