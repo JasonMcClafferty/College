@@ -8,6 +8,9 @@ namespace DSA_CA2
 {
     class Menu
     {
+
+        private static string instructions = "Please Enter:\n[1] Shortest Path\n[0] Exit";
+
         public static void printList(AdjacencyList adj)
         {
             for (int i = 0; i < adj.getLength(); i++)
@@ -24,6 +27,21 @@ namespace DSA_CA2
                 }
                 Console.WriteLine("Node " + (i + 1) + ":\n" + neighbours + "\n\n");
             }
+        }
+
+        public static void menuLoop()
+        {
+            int choice = -1;
+
+            while(choice != 0)
+            {
+                Console.WriteLine(instructions);
+                choice = Int32.Parse(Console.ReadLine());
+
+
+
+            }
+
         }
 
         public static void Main(string[] Args)
