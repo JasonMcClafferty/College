@@ -56,6 +56,7 @@ namespace DSA_CA2
 
         public Dictionary<int, int> BFS(int s)
         {
+
             // level is a dictionary of verteces that have been assigned a level.
             // S is the start node, so is assigned level 0.
             Dictionary<int, int> level = new Dictionary<int, int>();
@@ -80,6 +81,7 @@ namespace DSA_CA2
                 next = new List<int>();
                 foreach (int u in frontier)
                     foreach (int v in verteces[u])
+
                     {
                         // If int v is not in levels   
                         if (!level.ContainsKey(v))
@@ -99,10 +101,6 @@ namespace DSA_CA2
                
         }
     }
-
-
-
-
     class TestGraph
     {
         public static void Main() {
@@ -125,9 +123,9 @@ namespace DSA_CA2
 
             AdjacencyList adj = new AdjacencyList(v);
 
+
             
             adj.shortestPath(2, 5);
-
         }
     }
 }
